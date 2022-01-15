@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  name: MyString
+  area_id: MyString
+  city_id: MyString
+  county_id: MyString
+  total_students: 1
+  yx: 1
+  lh: 1
+  jg: 1
+  bjg: 1
+  qk: 1
+  category: MyString
+
+two:
+  code: MyString
+  name: MyString
+  area_id: MyString
+  city_id: MyString
+  county_id: MyString
+  total_students: 1
+  yx: 1
+  lh: 1
+  jg: 1
+  bjg: 1
+  qk: 1
+  category: MyString

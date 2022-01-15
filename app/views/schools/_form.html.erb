@@ -1,0 +1,77 @@
+<%= form_with(model: school) do |form| %>
+  <% if school.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(school.errors.count, "error") %> prohibited this school from being saved:</h2>
+
+      <ul>
+        <% school.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :code, style: "display: block" %>
+    <%= form.text_field :code %>
+  </div>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :area_id, style: "display: block" %>
+    <%= form.text_field :area_id %>
+  </div>
+
+  <div>
+    <%= form.label :city_id, style: "display: block" %>
+    <%= form.text_field :city_id %>
+  </div>
+
+  <div>
+    <%= form.label :county_id, style: "display: block" %>
+    <%= form.text_field :county_id %>
+  </div>
+
+  <div>
+    <%= form.label :total_students, style: "display: block" %>
+    <%= form.number_field :total_students %>
+  </div>
+
+  <div>
+    <%= form.label :yx, style: "display: block" %>
+    <%= form.number_field :yx %>
+  </div>
+
+  <div>
+    <%= form.label :lh, style: "display: block" %>
+    <%= form.number_field :lh %>
+  </div>
+
+  <div>
+    <%= form.label :jg, style: "display: block" %>
+    <%= form.number_field :jg %>
+  </div>
+
+  <div>
+    <%= form.label :bjg, style: "display: block" %>
+    <%= form.number_field :bjg %>
+  </div>
+
+  <div>
+    <%= form.label :qk, style: "display: block" %>
+    <%= form.number_field :qk %>
+  </div>
+
+  <div>
+    <%= form.label :category, style: "display: block" %>
+    <%= form.text_field :category %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

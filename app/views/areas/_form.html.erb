@@ -1,0 +1,32 @@
+<%= form_with(model: area) do |form| %>
+  <% if area.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(area.errors.count, "error") %> prohibited this area from being saved:</h2>
+
+      <ul>
+        <% area.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :code, style: "display: block" %>
+    <%= form.text_field :code %>
+  </div>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :total_shcools, style: "display: block" %>
+    <%= form.number_field :total_shcools %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
