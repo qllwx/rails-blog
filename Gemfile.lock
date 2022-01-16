@@ -265,6 +265,7 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  kaminari
   pg
   puma (~> 5.0)
   rails (~> 7.0.1)

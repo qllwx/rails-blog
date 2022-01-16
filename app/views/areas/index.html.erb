@@ -5,10 +5,10 @@
 <div id="areas">
   <% @areas.each do |area| %>
     <%= render area %>
-    <p>
-      <%= link_to "Show this area", area %>
-    </p>
+    
   <% end %>
+  <%= paginate @areas %>
+  <%= page_entries_info @areas %>
 </div>
 
 <%= link_to "New area", new_area_path %>

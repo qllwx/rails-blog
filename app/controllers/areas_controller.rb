@@ -3,7 +3,7 @@ class AreasController < ApplicationController
 
   # GET /areas or /areas.json
   def index
-    @areas = Area.all
+    @areas = Area.page(params[:page])
   end
 
   # GET /areas/1 or /areas/1.json

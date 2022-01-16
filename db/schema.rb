@@ -41,19 +41,21 @@ ActiveRecord::Schema.define(version: 2022_01_15_074822) do
   create_table "schools", force: :cascade do |t|
     t.string "code"
     t.string "name"
-    t.string "area_id"
-    t.string "city_id"
-    t.string "county_id"
-    t.integer "total_students"
-    t.integer "yx"
-    t.integer "lh"
-    t.integer "jg"
-    t.integer "bjg"
-    t.integer "qk"
+    t.string "cityId"
+    t.string "countyId"
+    t.integer "totalStudents"
+    t.integer "excellentNum"
+    t.integer "goodNum"
+    t.integer "passNum"
+    t.integer "failNum"
+    t.integer "missexam"
     t.string "category"
+    t.integer "area_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["area_id"], name: "index_schools_on_area_id"
   end
 
   add_foreign_key "comments", "articles"
+  add_foreign_key "schools", "areas"
 end

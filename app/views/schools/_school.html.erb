@@ -1,62 +1,12 @@
+
 <div id="<%= dom_id school %>">
-  <p>
-    <strong>Code:</strong>
-    <%= school.code %>
-  </p>
-
-  <p>
-    <strong>Name:</strong>
+    <%= school.id %>
+    <%= link_to school.code,edit_school_path(school) %>
+  
     <%= school.name %>
-  </p>
-
-  <p>
-    <strong>Area:</strong>
-    <%= school.area_id %>
-  </p>
-
-  <p>
-    <strong>City:</strong>
-    <%= school.city_id %>
-  </p>
-
-  <p>
-    <strong>County:</strong>
-    <%= school.county_id %>
-  </p>
-
-  <p>
-    <strong>Total students:</strong>
-    <%= school.total_students %>
-  </p>
-
-  <p>
-    <strong>Yx:</strong>
-    <%= school.yx %>
-  </p>
-
-  <p>
-    <strong>Lh:</strong>
-    <%= school.lh %>
-  </p>
-
-  <p>
-    <strong>Jg:</strong>
-    <%= school.jg %>
-  </p>
-
-  <p>
-    <strong>Bjg:</strong>
-    <%= school.bjg %>
-  </p>
-
-  <p>
-    <strong>Qk:</strong>
-    <%= school.qk %>
-  </p>
-
-  <p>
-    <strong>Category:</strong>
+  
     <%= school.category %>
-  </p>
-
+     <%= school.area_id %>
+    <%= school.city_id %>
+    <%= school.county_id %>
 </div>

@@ -24,6 +24,7 @@ if areaSet.count > Area.count
     end
 end
 
+School.delete_all
 
 schoolSet=mysiteConnect.exec('select id,code,name,total_students area_id,city_id,county_id,yx,lh,jg,bjg,qk,category from csh_school')
 if schoolSet.count > School.count
@@ -32,10 +33,17 @@ if schoolSet.count > School.count
                 code: row['code'],
                 name: row['name'],
                 total_students: row['total_students'],
-                yx:row['yx'],lh:row['lh'],jg:row['jg'],bjg:row['bjg'],qk:row['qk'],
-                category: row['category']
+                excellentNum: row['yx'],
+                goodNum:row['lh'],
+                passNum:row['jg'],
+                failNum:row['bjg'],
+                missexam:row['qk'],
+                category: row['category'],
+                area: row['area_id'],
+                city_id: row['city_id'],
+                county_id:row['county_id']
                 )
-        puts row['name']
+        #puts row['name']
     end
 end
 

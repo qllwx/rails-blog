@@ -1,17 +1,22 @@
 <div id="<%= dom_id area %>">
-  <p>
-    <strong>Code:</strong>
-    <%= area.code %>
-  </p>
+<tr>
+  <td>
+  <%=area.id%>
+  </td>
+  <td>
+    
+    <%= link_to area.code, area %>
+   
+  </td>
 
-  <p>
-    <strong>Name:</strong>
+  <td>
+   
     <%= area.name %>
-  </p>
+  </td>
 
-  <p>
-    <strong>Total shcools:</strong>
-    <%= area.total_shcools %>
-  </p>
-
+  <td>
+    
+    <%= area.total_schools %>
+  </td>
+</tr>
 </div>

@@ -1,14 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Schools</h1>
-
+<%= page_entries_info @schools %>
 <div id="schools">
   <% @schools.each do |school| %>
     <%= render school %>
-    <p>
-      <%= link_to "Show this school", school %>
-    </p>
+    
   <% end %>
 </div>
+<%= paginate @schools%>
 
 <%= link_to "New school", new_school_path %>
