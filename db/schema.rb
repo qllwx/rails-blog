@@ -41,14 +41,13 @@ ActiveRecord::Schema.define(version: 2022_01_15_074822) do
   create_table "schools", force: :cascade do |t|
     t.string "code"
     t.string "name"
-    t.string "cityId"
-    t.string "countyId"
-    t.integer "totalStudents"
-    t.integer "excellentNum"
-    t.integer "goodNum"
-    t.integer "passNum"
-    t.integer "failNum"
-    t.integer "missexam"
+    t.string "countyCode"
+    t.integer "studentTotal"
+    t.integer "excellentTotal"
+    t.integer "goodTotal"
+    t.integer "passTotal"
+    t.integer "failTotal"
+    t.integer "missExamTotal"
     t.string "category"
     t.integer "area_id", null: false
     t.datetime "created_at", precision: 6, null: false

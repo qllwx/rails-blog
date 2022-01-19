@@ -32,18 +32,18 @@ if schoolSet.count > School.count
         School.create(id: row['id'],
                 code: row['code'],
                 name: row['name'],
-                total_students: row['total_students'],
-                excellentNum: row['yx'],
-                goodNum:row['lh'],
-                passNum:row['jg'],
-                failNum:row['bjg'],
-                missexam:row['qk'],
+                studentTotal: row['total_students'],
+                excellentTotal: row['yx'],
+                goodTotal:row['lh'],
+                passTotal:row['jg'],
+                failTotal:row['bjg'],
+                missExamTotal:row['qk'],
                 category: row['category'],
-                area: row['area_id'],
-                city_id: row['city_id'],
-                county_id:row['county_id']
+                area: Area.find_by_id(row['area_id']),
+               
+                countyCode:row['county_id']
                 )
-        #puts row['name']
+        puts row['name']
     end
 end
 
