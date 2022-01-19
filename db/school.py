@@ -117,6 +117,8 @@ def getAllSchools(df_row):
         
         savetotalschools(total=Total['schools'],code=df_row.code)       
         areaId=df_row.code
+        if areaId==1:
+            return
         
        
         for i in tqdm(range(totalPages)):
@@ -164,13 +166,17 @@ def saveSchools(schools):
         #print(school)
         sql="select id from areas where code like '%s'"%(school['area_id'])
         areaId=conn.execute(sql).fetchone()[0]
+        
         res=conn.execute("select * from schools where code like '%s'"%school['code']).fetchone()
         
         if not (res  == None):
-            sql="update schools set county_code='%s' where code like '%s'"%(school['county_id'],school['code'])
+            sql="update schools set county_code='%s',area_id=%s where code like '%s'"%(school['county_id'],areaId,school['code'])
+            printstr="update OK!"
         else:
-          sql="insert into schools (code ,name,area_id,county_code,created_at,updated_at) values('%s','%s',%s,'%s','%s','%s')"% \
+            sql="insert into schools (code ,name,area_id,county_code,created_at,updated_at) values('%s','%s',%s,'%s','%s','%s')"% \
                         (school['code'],school['name'],areaId,school['county_id'],datetime.now(),datetime.now())
+
+            printstr='saved OK!'
 
         try:
             conn.execute(sql)
@@ -178,7 +184,7 @@ def saveSchools(schools):
         except Exception as e:
             print("%s Error:%s"%(school['name'],e.args))
         else:
-            print(school['name'],"saved OK!")
+            print(school['name'],printstr)
 
 
 
